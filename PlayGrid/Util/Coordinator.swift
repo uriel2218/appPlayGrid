@@ -21,14 +21,24 @@ final class AppCoordinator { //ejecuta las vistas
         let ViewController = factory.makeWelcomeViewController()
         navigationController.viewControllers = [ViewController]
     }
+    func showLogin() {
+            let viewController = factory.makeLoginViewController()
+            navigationController.pushViewController(viewController, animated: true)
+        }
 }
 
 protocol ViewControllerFactory { //se declara
     func makeWelcomeViewController() -> UIViewController
+    func makeLoginViewController(onLoginSuccess: @escaping() -> Void) -> UIViewController //Declara
 }
 
 final class AppDIContainer: ViewControllerFactory { //se implementa
     func makeWelcomeViewController() -> UIViewController {
         WelcomeViewController()
+    }
+    //Implementa
+    func makeLoginViewController(onLoginSuccess: @escaping() -> Void) -> UIViewController {
+        let presenter = LoginPresenter(onLoginSuccess: onLoginSuccess)
+        LoginViewController(presenter: presenter)
     }
 }
