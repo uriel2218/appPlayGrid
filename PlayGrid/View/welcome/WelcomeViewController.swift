@@ -8,7 +8,7 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    private let presenter: ShowLogin
+    private let presenter: WelcomePresenter
     init (presenter: WelcomePresenter) {
         self.presenter = presenter
         super.init(nibName: "WelcomeViweController", bundle: nil)
