@@ -18,27 +18,35 @@ final class AppCoordinator { //ejecuta las vistas
     }
     
     func start() {
-        let ViewController = factory.makeWelcomeViewController()
-        navigationController.viewControllers = [ViewController]
-    }
-    func showLogin() {
-            let viewController = factory.makeLoginViewController()
-            navigationController.pushViewController(viewController, animated: true)
+        let viewController = factory.makeWelcomeViewController { [weak self] in
+            self?.showLogin()
         }
-}
-
-protocol ViewControllerFactory { //se declara
-    func makeWelcomeViewController() -> UIViewController
-    func makeLoginViewController(onLoginSuccess: @escaping() -> Void) -> UIViewController //Declara
-}
-
-final class AppDIContainer: ViewControllerFactory { //se implementa
-    func makeWelcomeViewController() -> UIViewController {
-        WelcomeViewController()
+        navigationController.viewControllers = [viewController]
     }
-    //Implementa
-    func makeLoginViewController(onLoginSuccess: @escaping() -> Void) -> UIViewController {
+    
+    private func showLogin() {
+        let viewController = factory.makeLoginViewController { [weak self] in
+            self?.showLogin()
+        }
+        navigationController.pushViewController(viewController, animated: true)
+    }
+        
+}
+
+protocol ViewControllerFactory {
+    func makeWelcomeViewController(onShowLogin: @escaping () -> Void) -> UIViewController
+    func makeLoginViewController(onLoginSuccess: @escaping () -> Void) -> UIViewController
+}
+
+final class AppDIContainer: ViewControllerFactory {
+    func makeWelcomeViewController(onShowLogin: @escaping () -> Void) -> UIViewController {
+        let presenter = WelcomePresenterImplementation(onShowLogin: onShowLogin)
+        return WelcomeViewController(presenter: presenter)
+    }
+    
+    func makeLoginViewController(onLoginSuccess: @escaping () -> Void) -> UIViewController {
         let presenter = LoginPresenter(onLoginSuccess: onLoginSuccess)
-        LoginViewController(presenter: presenter)
+            
+        return LoginViewController(presenter: presenter)
     }
 }
