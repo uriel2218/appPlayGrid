@@ -81,9 +81,8 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAt-lW-uIh">
-                                    <rect key="frame" x="116.66666666666666" y="342" width="128" height="35"/>
+                                    <rect key="frame" x="16" y="230" width="329" height="35"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="128" id="bPd-uq-n0M"/>
                                         <constraint firstAttribute="height" constant="35" id="dww-jr-Fx3"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
@@ -91,32 +90,35 @@
                                         <color key="baseBackgroundColor" name="secondaryBackground"/>
                                     </buttonConfiguration>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbr-l6-gmM">
-                                    <rect key="frame" x="31" y="393" width="300" height="35"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya tienes una cuenta?. Inicia sesión" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ln-0x-k1b">
+                                    <rect key="frame" x="16" y="393" width="329" height="21"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="Ni7-hn-61O"/>
+                                        <constraint firstAttribute="height" constant="21" id="eDO-3s-OmV"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="¿Ya tienes una cuenta?. Inicia sesión">
-                                        <color key="baseForegroundColor" name="secondaryBackground"/>
-                                    </buttonConfiguration>
-                                </button>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="secondaryBackground"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="lAt-lW-uIh" secondAttribute="trailing" constant="16" id="3Tp-65-Xqe"/>
                                 <constraint firstAttribute="trailing" secondItem="1Da-Fv-eGz" secondAttribute="trailing" constant="16" id="3kw-EI-qch"/>
                                 <constraint firstItem="1Da-Fv-eGz" firstAttribute="leading" secondItem="m2X-2T-fKP" secondAttribute="leading" constant="16" id="5Qw-Vw-B65"/>
                                 <constraint firstItem="rWK-o0-7GO" firstAttribute="top" secondItem="oul-tg-rpa" secondAttribute="bottom" constant="32" id="9Rn-AE-7Gn"/>
                                 <constraint firstItem="rWK-o0-7GO" firstAttribute="centerX" secondItem="m2X-2T-fKP" secondAttribute="centerX" id="Bb8-vE-TPb"/>
                                 <constraint firstAttribute="trailing" secondItem="oul-tg-rpa" secondAttribute="trailing" constant="16" id="CZr-0T-c7b"/>
                                 <constraint firstItem="lAt-lW-uIh" firstAttribute="centerX" secondItem="m2X-2T-fKP" secondAttribute="centerX" id="Dry-66-3s0"/>
-                                <constraint firstItem="fbr-l6-gmM" firstAttribute="top" secondItem="lAt-lW-uIh" secondAttribute="bottom" constant="16" id="Fn7-th-tBd"/>
                                 <constraint firstItem="1Da-Fv-eGz" firstAttribute="centerX" secondItem="m2X-2T-fKP" secondAttribute="centerX" id="Ogl-Um-JeS"/>
+                                <constraint firstItem="4ln-0x-k1b" firstAttribute="leading" secondItem="m2X-2T-fKP" secondAttribute="leading" constant="16" id="RnQ-c6-VpU"/>
                                 <constraint firstItem="1Da-Fv-eGz" firstAttribute="top" secondItem="rWK-o0-7GO" secondAttribute="bottom" constant="32" id="Svj-5L-c3H"/>
                                 <constraint firstItem="oul-tg-rpa" firstAttribute="centerX" secondItem="m2X-2T-fKP" secondAttribute="centerX" id="ZIk-hI-YcR"/>
                                 <constraint firstAttribute="trailing" secondItem="rWK-o0-7GO" secondAttribute="trailing" constant="16" id="aKg-Cf-Oxs"/>
+                                <constraint firstItem="4ln-0x-k1b" firstAttribute="top" secondItem="lAt-lW-uIh" secondAttribute="bottom" constant="128" id="dAG-lw-vER"/>
+                                <constraint firstAttribute="trailing" secondItem="4ln-0x-k1b" secondAttribute="trailing" constant="16" id="gjE-np-kST"/>
+                                <constraint firstItem="lAt-lW-uIh" firstAttribute="leading" secondItem="m2X-2T-fKP" secondAttribute="leading" constant="16" id="jfd-zQ-6la"/>
                                 <constraint firstItem="rWK-o0-7GO" firstAttribute="leading" secondItem="m2X-2T-fKP" secondAttribute="leading" constant="16" id="lPc-Zy-48n"/>
-                                <constraint firstItem="lAt-lW-uIh" firstAttribute="top" secondItem="1Da-Fv-eGz" secondAttribute="bottom" constant="128" id="nNa-ks-WYW"/>
+                                <constraint firstItem="lAt-lW-uIh" firstAttribute="top" secondItem="1Da-Fv-eGz" secondAttribute="bottom" constant="16" id="nNa-ks-WYW"/>
                                 <constraint firstItem="oul-tg-rpa" firstAttribute="leading" secondItem="m2X-2T-fKP" secondAttribute="leading" constant="16" id="ozH-Sf-Qcf"/>
                                 <constraint firstItem="oul-tg-rpa" firstAttribute="top" secondItem="m2X-2T-fKP" secondAttribute="top" constant="48" id="usw-q5-An8"/>
                             </constraints>
