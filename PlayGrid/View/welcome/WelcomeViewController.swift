@@ -11,7 +11,7 @@ class WelcomeViewController: UIViewController {
     private let presenter: WelcomePresenter
     init (presenter: WelcomePresenter) {
         self.presenter = presenter
-        super.init(nibName: "WelcomeViweController", bundle: nil)
+        super.init(nibName: "WelcomeViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
