@@ -26,7 +26,8 @@ final class AppCoordinator { //ejecuta las vistas
     
     private func showLogin() {
         let viewController = factory.makeLoginViewController { [weak self] in
-            self?.showLogin()
+            // Handle success login navigation
+            print("Login success")
         }
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -45,7 +46,8 @@ final class AppDIContainer: ViewControllerFactory {
     }
     
     func makeLoginViewController(onLoginSuccess: @escaping () -> Void) -> UIViewController {
-        let presenter = LoginPresenter(onLoginSuccess: onLoginSuccess)
+        let validator = LoginValidator()
+        let presenter = LoginPresenter(onLoginSuccess: onLoginSuccess, validator: validator)
             
         return LoginViewController(presenter: presenter)
     }
