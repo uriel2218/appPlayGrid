@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2A1701683090ED6E000C6B3F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1701673090ED6E000C6B3F /* FirebaseAuth */; };
+		2A17016A3090ED6E000C6B3F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1701693090ED6E000C6B3F /* FirebaseFirestore */; };
+		2A17016F3090EE98000C6B3F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2A17016E3090EE98000C6B3F /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A29ED4FC30656BDB00546AC9 /* PlayGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1701683090ED6E000C6B3F /* FirebaseAuth in Frameworks */,
+				2A17016A3090ED6E000C6B3F /* FirebaseFirestore in Frameworks */,
+				2A17016F3090EE98000C6B3F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 			);
 			name = PlayGrid;
 			packageProductDependencies = (
+				2A1701673090ED6E000C6B3F /* FirebaseAuth */,
+				2A1701693090ED6E000C6B3F /* FirebaseFirestore */,
+				2A17016E3090EE98000C6B3F /* Lottie */,
 			);
 			productName = PlayGrid;
 			productReference = A29ED4FC30656BDB00546AC9 /* PlayGrid.app */;
@@ -107,6 +119,10 @@
 			);
 			mainGroup = A29ED4F330656BDB00546AC9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2A1701663090ED6E000C6B3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2A17016D3090EE98000C6B3F /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A29ED4FD30656BDB00546AC9 /* Products */;
 			projectDirPath = "";
@@ -339,6 +355,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A1701663090ED6E000C6B3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.1.1;
+			};
+		};
+		2A17016D3090EE98000C6B3F /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A1701673090ED6E000C6B3F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A1701663090ED6E000C6B3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2A1701693090ED6E000C6B3F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A1701663090ED6E000C6B3F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2A17016E3090EE98000C6B3F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A17016D3090EE98000C6B3F /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A29ED4F430656BDB00546AC9 /* Project object */;
 }
