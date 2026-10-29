@@ -37,25 +37,27 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func requestLogin(_ sender: UIButton) {
+            presenter.requestLogin()
     }
     
 }
 
 extension LoginViewController: LoginView {
     func showEmailError(message: String?) {
-        emailErrorLabel.text = message
-        emailErrorLabel.isHidden = message == nil
+        
     }
     
     func showPasswordError(message: String?) {
-        passwordErrorLabel.text = message
-        passwordErrorLabel.isHidden = message == nil
+        
     }
     
     func setLoginButtonEnabled(_ isEnabled: Bool) {
         loginButton.isEnabled = isEnabled
     }
     
+    func manageLoader(_ isLoading: Bool) {
+            isLoading ? showLoader() : hideLoader()
+    }
     
 }
 
