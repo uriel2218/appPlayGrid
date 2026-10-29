@@ -4,6 +4,7 @@ protocol LoginView: AnyObject {
     func showEmailError(message: String?)
     func showPasswordError(message: String?)
     func setLoginButtonEnabled(_ isEnabled: Bool)
+    func manageLoader
 }
 
 final class LoginPresenter {
@@ -29,4 +30,5 @@ final class LoginPresenter {
         let isFormValid = validator.validateEmail(email) == nil && validator.validatePassword(password) == nil
         view?.setLoginButtonEnabled(isFormValid)
     }
+    
 }
