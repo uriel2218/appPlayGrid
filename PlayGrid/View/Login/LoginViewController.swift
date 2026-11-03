@@ -37,10 +37,32 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func requestLogin(_ sender: UIButton) {
+        presenter.requestLogin(email: emailTextField.text ?? "", password: passwordTextField.text ?? "".text)
     }
     
 }
 
+
+/*
+ extension LoginViewController: LoginView {
+     func showEmailError(message: String?) {
+         
+     }
+     
+     func showPasswordError(message: String?) {
+         
+     }
+     
+     func setLoginButtonEnabled(_ isEnabled: Bool) {
+         loginButton.isEnabled = isEnabled
+     }
+     
+     func manageLoader(_ isLoading: Bool) {
+         isLoading ? showLoader() : hideLoader()
+     }
+ }
+ */
+ 
 extension LoginViewController: LoginView {
     func showEmailError(message: String?) {
         emailErrorLabel.text = message
@@ -68,3 +90,6 @@ extension LoginViewController: UITextFieldDelegate {
         }
     }
 }
+
+
+// SE NECESITAN ARREGLAR ERRORES en @IBAction func requestLogin(_ sender: UIButton)
