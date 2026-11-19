@@ -26,5 +26,11 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func showLogin(_ sender: UIButton) {
+        presenter.showLogin()
+    }
+    
     
 }
+
+// SE NECESITAN ARREGLAR ERRORES
