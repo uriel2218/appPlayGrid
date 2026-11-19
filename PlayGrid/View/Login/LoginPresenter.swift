@@ -4,7 +4,7 @@ protocol LoginView: AnyObject {
     func showEmailError(message: String?)
     func showPasswordError(message: String?)
     func setLoginButtonEnabled(_ isEnabled: Bool)
-    func manageLoader(_ isLoading: Bool)
+    func manageLoader(_ isLoading: Bool)}
 }
 
 final class LoginPresenter {
@@ -33,18 +33,19 @@ final class LoginPresenter {
         view?.setLoginButtonEnabled(isFormValid)
     }
     
-    func requestLogin(email: String) {
+    func requestLogin(email: String, password: String) {
         view?.manageLoader(true)
         Task { @MainActor [weak self] in
             guard let self = self else { return }
             do {
-                let user = try await self.authRepository.signIn(email: <#T##String#>, password: password)
+                let user = try await self.authRepository.signUp(email: <#T##String#>, password: password)
                 self.view?.manageLoader(false)
                 self.onLoginSuccess()
             } catch {
                 self.view?.manageLoader(false)
                 self.view?.showEmailError(message: error.localizedDescription )
             }
+
         }
     }
 }

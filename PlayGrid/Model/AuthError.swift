@@ -11,7 +11,7 @@ enum AuthError: LocalizedError{
     case invalidCredentials
     case emaiAlreadyInUse
     case network
-    case unknown
+    case unknown(Message)
     
     var errorDescription: String?{
         switch self {
